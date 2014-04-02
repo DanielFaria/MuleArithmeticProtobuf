@@ -6,25 +6,24 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.mule.api.MuleEventContext;
+import org.mule.api.lifecycle.Callable;
+
 import com.arithmeticprotobuf.domain.Operations;
 import com.arithmeticprotobuf.domain.Operations.OperationData;
 import com.arithmeticprotobuf.domain.Operations.OperationData.Operation;
 
-@Path("/")
-public class ArithmeticController {
 
-	@GET
-	@Path("calc")
-	@Produces("application/x-protobuf")
-    public Response getOperationData() {
+public class ArithmeticController implements Callable {
+		
+	@Override
+	public Object onCall(MuleEventContext eventContext) throws Exception {
 		OperationData operationData = Operations.OperationData.newBuilder()
 				.setOperatorOne(1d)
 				.setOperatorTwo(1d)
 				.setOperation(Operation.sum)
 				.build();
-		System.out.println("Chamando");
-		return Response.ok(operationData.toByteArray(),MediaType.APPLICATION_OCTET_STREAM).status(200).build();
-        
-    }
+		return operationData.toByteArray();
+	}
 
 }

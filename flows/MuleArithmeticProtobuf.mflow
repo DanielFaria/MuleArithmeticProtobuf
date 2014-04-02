@@ -1,43 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="MuleArithmeticProtobuf">
-    <flow SubFlow="false" name="MuleArithmeticProtobufFlow1" type="http://www.mulesoft.org/schema/mule/core/flow" entity-id="e55fa49c-e1f4-43a2-986e-742e56bd1b3f">
+    <flow SubFlow="false" name="ProtoFlow" type="http://www.mulesoft.org/schema/mule/core/flow" entity-id="873ef8ac-ef95-400f-a42b-a321ef382736">
         <properties>
-            <property name="processingStrategy2" value=""/>
-            <property name="initialState" value=""/>
-            <property name="auxiliary;erased;initialState" value="true"/>
-            <property name="bussinessEventsLabel" value=""/>
-            <property name="tracking:enable-default-events" value="false"/>
-            <property name="auxiliary;erased;processingStrategy2" value="true"/>
-            <property name="updated"/>
-            <property-collection name="@http://www.mulesoft.org/schema/mule/ee/tracking/transaction;434917382">
-                <property name="id" value=""/>
-                <property name="isProcessed$$$$ " value="true"/>
-            </property-collection>
+            <property name="initialState"/>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="1"/>
         </properties>
-        <description></description>
-        <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="407227e3-2188-418b-b924-887ebbc01970">
+        <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#1">
             <graphicalData x="0" y="0" width="0" height="0"/>
-            <endpoint direction="Inbound" message-exchange-pattern="RequestResponse" name="HTTP" type="http://www.mulesoft.org/schema/mule/https/endpoint" entity-id="2990d8ae-7bc3-4bd7-80a1-a9eafc627304">
-                <graphicalData x="21" y="64" width="68" height="173"/>
-                <properties>
-                    <property name="exchange-pattern" value="request-response"/>
-                </properties>
-                <description></description>
-            </endpoint>
-            <pattern name="REST" type="http://www.mulesoft.org/schema/mule/jersey/resources" entity-id="eb3db523-9d3a-4338-b484-70de727ffcfe">
+            <endpoint direction="Inbound" message-exchange-pattern="RequestResponse" name="HTTP" type="http://www.mulesoft.org/schema/mule/http/endpoint" entity-id="HTTP#1">
                 <graphicalData x="0" y="0" width="0" height="0"/>
                 <properties>
-                    <property name="updated"/>
-                    <property-collection name="@http://www.mulesoft.org/schema/mule/core/component;1016352002">
-                        <property name="class" value="com.arithmeticprotobuf.rest.controller.ArithmeticController"/>
-                        <property name="isProcessed$$$$ " value="true"/>
-                    </property-collection>
-                    <property-collection name="@http://www.mulesoft.org/schema/mule/core/refInterceptorStackType;1634512668">
-                        <property name="ref" value=""/>
-                        <property name="isProcessed$$$$ " value="true"/>
-                    </property-collection>
+                    <property name="port" value="8081"/>
+                    <property name="host" value="localhost"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="followRedirects"/>
+                    <property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/http/endpoint"/>
+                    <property name="keep-alive"/>
+                    <property name="contentType"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="password"/>
+                    <property name="exchange-pattern" value="request-response"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="httpLabel"/>
+                    <property name="address"/>
+                    <property name="path" value="calc"/>
+                    <property name="encoding"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="method"/>
+                    <property name="user"/>
+                    <property name="auxiliary;index" value="2"/>
+                    <property name="responseTimeout"/>
+                    <property name="mimeType"/>
+                    <property name="connector-ref"/>
                 </properties>
-                <description></description>
+            </endpoint>
+            <pattern name="Java" type="http://www.mulesoft.org/schema/mule/core/component" entity-id="Java#1">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="class" value="com.arithmeticprotobuf.rest.controller.ArithmeticController"/>
+                    <property name="auxiliary;index" value="3"/>
+                </properties>
+            </pattern>
+            <unknown description="false" index="4" entity-id="unknown#1">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <content>&lt;protobuf:deserialize xmlns:protobuf=&quot;http://www.mulesoft.org/schema/mule/protobuf&quot; protobufClass=&quot;com.arithmeticprotobuf.domain.Operations&quot;/&gt;</content>
+            </unknown>
+            <pattern name="Object to JSON" type="http://www.mulesoft.org/schema/mule/json/object-to-json-transformer" entity-id="Object to JSON#1">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="sourceClass"/>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property name="mapper-ref"/>
+                    <property name="auxiliary;index" value="5"/>
+                    <property name="mimeType"/>
+                </properties>
             </pattern>
         </lane>
     </flow>

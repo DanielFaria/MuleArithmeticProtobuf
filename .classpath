@@ -19,6 +19,7 @@
   <classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-portunif/1.8.6.3/grizzly-portunif-1.8.6.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-rcm/1.8.6.3/grizzly-rcm-1.8.6.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-servlet-webserver/1.8.6.3/grizzly-servlet-webserver-1.8.6.3.jar"/>
+  <classpathentry kind="var" path="M2_REPO/javax/inject/javax.inject/1/javax.inject-1.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-impl/2.1.5/jaxb-impl-2.1.5.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-xjc/2.2.5.1/jaxb-xjc-2.2.5.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/slf4j/jcl-over-slf4j/1.6.1/jcl-over-slf4j-1.6.1.jar"/>
@@ -30,11 +31,15 @@
   <classpathentry kind="var" path="M2_REPO/org/mockito/mockito-all/1.9.0/mockito-all-1.9.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/mockobjects/mockobjects-core/0.09/mockobjects-core-0.09.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/mulesoft/muleesb/mule-core-ee/3.4.1/mule-core-ee-3.4.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mule/tools/devkit/mule-devkit-annotations/3.3.2/mule-devkit-annotations-3.3.2.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/mulesoft/muleesb/modules/mule-module-boot-ee/3.4.1/mule-module-boot-ee-3.4.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mule/modules/mule-module-protobuf/1.0-SNAPSHOT/mule-module-protobuf-1.0-SNAPSHOT.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mule/tools/devkit/protobuf-module/1.0-SNAPSHOT/protobuf-module-1.0-SNAPSHOT.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-tx/3.0.6.RELEASE/spring-tx-3.0.6.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-web/3.0.6.RELEASE/spring-web-3.0.6.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/sshd/sshd-core/0.6.0/sshd-core-0.6.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar" sourcepath="M2_REPO/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-sources.jar"/>
 </classpath>

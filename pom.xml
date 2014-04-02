@@ -30,6 +30,21 @@
 					<artifactId>maven-install-plugin</artifactId>
 					<version>2.3.1</version>
 				</plugin>
+				<!-- Mule Protobuf plugin -->
+				<plugin>
+					<groupId>org.mule.tools</groupId>
+					<artifactId>maven-mule-plugin</artifactId>
+					<extensions>true</extensions>
+					<configuration>
+						<excludeMuleDependencies>false</excludeMuleDependencies>
+						<inclusions>
+							<inclusion>
+								<groupId>org.mule.tools.devkit</groupId>
+								<artifactId>protobuf-module</artifactId>
+							</inclusion>
+						</inclusions>
+					</configuration>
+				</plugin>
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
 					only. It has no influence on the Maven build itself. -->
 				<plugin>
@@ -307,6 +322,16 @@
 		</dependency>
 
 		<!-- Mule Transports -->
+		<dependency>
+           <groupId>org.mule.tools.devkit</groupId>
+           <artifactId>protobuf-module</artifactId>
+          <version>LATEST</version>
+        </dependency>
+		<dependency>
+          <groupId>org.mule.modules</groupId>
+          <artifactId>mule-module-protobuf</artifactId>
+         <version>1.0-SNAPSHOT</version>
+        </dependency>
 		<dependency>
 			<groupId>org.mule.transports</groupId>
 			<artifactId>mule-transport-file</artifactId>
