@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="MuleArithmeticProtobuf">
-    <flow SubFlow="false" name="ProtoFlow" type="http://www.mulesoft.org/schema/mule/core/flow" entity-id="4a4de07e-b789-4e7b-8752-4587d397f061">
+    <flow SubFlow="false" name="ProtoFlow" type="http://www.mulesoft.org/schema/mule/core/flow" entity-id="7448fc6a-49a1-484c-b529-d00fe9899f5c">
         <properties>
             <property name="initialState"/>
             <property name="processingStrategy2"/>
@@ -12,7 +12,7 @@
         <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#1">
             <graphicalData x="0" y="0" width="0" height="0"/>
             <endpoint direction="Inbound" message-exchange-pattern="RequestResponse" name="HTTP" type="http://www.mulesoft.org/schema/mule/http/endpoint" entity-id="HTTP#1">
-                <graphicalData x="0" y="0" width="0" height="0"/>
+                <graphicalData x="21" y="64" width="68" height="173"/>
                 <properties>
                     <property name="port" value="8081"/>
                     <property name="host" value="localhost"/>
@@ -26,50 +26,35 @@
                     <property name="exchange-pattern" value="request-response"/>
                     <property name="tracking:enable-default-events"/>
                     <property name="ref"/>
-                    <property name="transformer-refs"/>
                     <property name="httpLabel"/>
+                    <property name="transformer-refs"/>
                     <property name="address"/>
-                    <property name="path" value="calc"/>
                     <property name="encoding"/>
+                    <property name="path"/>
                     <property name="responseTransformer-refs"/>
                     <property name="method"/>
                     <property name="user"/>
-                    <property name="auxiliary;index" value="2"/>
-                    <property name="responseTimeout"/>
                     <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="auxiliary;index" value="2"/>
                     <property name="connector-ref"/>
                 </properties>
             </endpoint>
-            <pattern name="Java" type="http://www.mulesoft.org/schema/mule/core/component" entity-id="Java#1">
+            <pattern name="REST" type="http://www.mulesoft.org/schema/mule/jersey/resources" entity-id="5b266cc9-42fb-447d-9a0a-4af98217dd06">
                 <graphicalData x="0" y="0" width="0" height="0"/>
                 <properties>
-                    <property name="class" value="com.arithmeticprotobuf.rest.controller.ArithmeticController"/>
-                    <property name="auxiliary;index" value="3"/>
+                    <property name="updated"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/core/component;302887272">
+                        <property name="class" value="com.arithmeticprotobuf.rest.controller.ArithmeticController"/>
+                        <property name="isProcessed$$$$ " value="true"/>
+                    </property-collection>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/core/refInterceptorStackType;713506825">
+                        <property name="ref" value=""/>
+                        <property name="isProcessed$$$$ " value="true"/>
+                    </property-collection>
                 </properties>
+                <description></description>
             </pattern>
-            <unknown description="false" index="4" entity-id="unknown#1">
-                <graphicalData x="0" y="0" width="0" height="0"/>
-                <content>&lt;protobuf:deserialize xmlns:protobuf=&quot;http://www.mulesoft.org/schema/mule/protobuf&quot; protobufClass=&quot;com.arithmeticprotobuf.domain.OperationData&quot;/&gt;</content>
-            </unknown>
-            <response index="5" entity-id="response#1">
-                <graphicalData x="0" y="0" width="0" height="0"/>
-                <compartment entity-id="compartment#1">
-                    <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#2">
-                        <pattern name="Object to XML" type="org.mule.tooling.ui.modules.core.pattern.objectToXmlTransformer" entity-id="Object to XML#1">
-                            <graphicalData x="0" y="0" width="0" height="0"/>
-                            <properties>
-<property name="returnClass"/>
-<property name="ignoreBadInput"/>
-<property name="driverClass"/>
-<property name="encoding"/>
-<property name="acceptMuleMessage"/>
-<property name="auxiliary;index" value="6"/>
-<property name="mimeType"/>
-                            </properties>
-                        </pattern>
-                    </lane>
-                </compartment>
-            </response>
         </lane>
     </flow>
 </mule-configuration>
