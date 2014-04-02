@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="MuleArithmeticProtobuf">
-    <flow SubFlow="false" name="ProtoFlow" type="http://www.mulesoft.org/schema/mule/core/flow" entity-id="873ef8ac-ef95-400f-a42b-a321ef382736">
+    <flow SubFlow="false" name="ProtoFlow" type="http://www.mulesoft.org/schema/mule/core/flow" entity-id="4a4de07e-b789-4e7b-8752-4587d397f061">
         <properties>
             <property name="initialState"/>
             <property name="processingStrategy2"/>
@@ -49,20 +49,27 @@
             </pattern>
             <unknown description="false" index="4" entity-id="unknown#1">
                 <graphicalData x="0" y="0" width="0" height="0"/>
-                <content>&lt;protobuf:deserialize xmlns:protobuf=&quot;http://www.mulesoft.org/schema/mule/protobuf&quot; protobufClass=&quot;com.arithmeticprotobuf.domain.Operations&quot;/&gt;</content>
+                <content>&lt;protobuf:deserialize xmlns:protobuf=&quot;http://www.mulesoft.org/schema/mule/protobuf&quot; protobufClass=&quot;com.arithmeticprotobuf.domain.OperationData&quot;/&gt;</content>
             </unknown>
-            <pattern name="Object to JSON" type="http://www.mulesoft.org/schema/mule/json/object-to-json-transformer" entity-id="Object to JSON#1">
+            <response index="5" entity-id="response#1">
                 <graphicalData x="0" y="0" width="0" height="0"/>
-                <properties>
-                    <property name="sourceClass"/>
-                    <property name="returnClass"/>
-                    <property name="ignoreBadInput"/>
-                    <property name="encoding"/>
-                    <property name="mapper-ref"/>
-                    <property name="auxiliary;index" value="5"/>
-                    <property name="mimeType"/>
-                </properties>
-            </pattern>
+                <compartment entity-id="compartment#1">
+                    <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#2">
+                        <pattern name="Object to XML" type="org.mule.tooling.ui.modules.core.pattern.objectToXmlTransformer" entity-id="Object to XML#1">
+                            <graphicalData x="0" y="0" width="0" height="0"/>
+                            <properties>
+<property name="returnClass"/>
+<property name="ignoreBadInput"/>
+<property name="driverClass"/>
+<property name="encoding"/>
+<property name="acceptMuleMessage"/>
+<property name="auxiliary;index" value="6"/>
+<property name="mimeType"/>
+                            </properties>
+                        </pattern>
+                    </lane>
+                </compartment>
+            </response>
         </lane>
     </flow>
 </mule-configuration>

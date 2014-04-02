@@ -17,7 +17,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.junit.Test;
 
-import com.arithmeticprotobuf.domain.Operations.OperationData;
+
+import com.arithmeticprotobuf.domain.OperationData;
 import com.google.protobuf.CodedOutputStream;
 
 public class ArithmeticControllerTest {

@@ -2,6 +2,9 @@ package tutorial;
 
 option java_package = "com.arithmeticprotobuf.domain";
 
+option java_generate_equals_and_hash = true;
+
+option java_multiple_files = true;
 
 message OperationData {
   required double operatorOne = 1;
