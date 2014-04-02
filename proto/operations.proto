@@ -1,0 +1,16 @@
+package tutorial;
+
+option java_package = "com.arithmeticprotobuf.domain";
+
+
+message OperationData {
+  required double operatorOne = 1;
+  required double operatorTwo = 2;
+  
+
+  enum Operation {
+    sum = 0;
+    subtract = 1;
+  }
+  required  Operation operation = 3;
+}  

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="MuleArithmeticProtobuf">
+    <flow SubFlow="false" name="MuleArithmeticProtobufFlow1" type="http://www.mulesoft.org/schema/mule/core/flow" entity-id="e55fa49c-e1f4-43a2-986e-742e56bd1b3f">
+        <properties>
+            <property name="processingStrategy2" value=""/>
+            <property name="initialState" value=""/>
+            <property name="auxiliary;erased;initialState" value="true"/>
+            <property name="bussinessEventsLabel" value=""/>
+            <property name="tracking:enable-default-events" value="false"/>
+            <property name="auxiliary;erased;processingStrategy2" value="true"/>
+            <property name="updated"/>
+            <property-collection name="@http://www.mulesoft.org/schema/mule/ee/tracking/transaction;434917382">
+                <property name="id" value=""/>
+                <property name="isProcessed$$$$ " value="true"/>
+            </property-collection>
+        </properties>
+        <description></description>
+        <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="407227e3-2188-418b-b924-887ebbc01970">
+            <graphicalData x="0" y="0" width="0" height="0"/>
+            <endpoint direction="Inbound" message-exchange-pattern="RequestResponse" name="HTTP" type="http://www.mulesoft.org/schema/mule/https/endpoint" entity-id="2990d8ae-7bc3-4bd7-80a1-a9eafc627304">
+                <graphicalData x="21" y="64" width="68" height="173"/>
+                <properties>
+                    <property name="exchange-pattern" value="request-response"/>
+                </properties>
+                <description></description>
+            </endpoint>
+            <pattern name="REST" type="http://www.mulesoft.org/schema/mule/jersey/resources" entity-id="eb3db523-9d3a-4338-b484-70de727ffcfe">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="updated"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/core/component;1016352002">
+                        <property name="class" value="com.arithmeticprotobuf.rest.controller.ArithmeticController"/>
+                        <property name="isProcessed$$$$ " value="true"/>
+                    </property-collection>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/core/refInterceptorStackType;1634512668">
+                        <property name="ref" value=""/>
+                        <property name="isProcessed$$$$ " value="true"/>
+                    </property-collection>
+                </properties>
+                <description></description>
+            </pattern>
+        </lane>
+    </flow>
+</mule-configuration>
